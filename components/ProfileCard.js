@@ -53,13 +53,13 @@ const ProfileCard = () => {
             </div>
             <div className="flex items-center mt-4 text-gray-800 dark:text-white">
               <a href="mailto:joshunwin@gmail.com"><button className="mr-3 bg-primarycolor dark:bg-primarycolor-dark hover:bg-primarycolor-dark dark:hover:bg-primarycolor-darker rounded px-3 py-2 text-white">Say hi 👋</button></a>
-              <a className="mr-2 text-gray-700 dark:text-white hover:text-primarycolor" href="http://www.github.com/josh-unwin" target="_blank" rel="noreferrer">
+              <a className="mr-2 text-gray-700 dark:text-white hover:text-primarycolor dark:hover:text-primarycolor" href="http://www.github.com/josh-unwin" target="_blank" rel="noreferrer">
                 <FaGithub className="text-2xl" />
               </a>
-              <a className="mr-2 text-gray-700 dark:text-white hover:text-primarycolor" href="https://www.linkedin.com/in/josh-unwin-a4735637/" target="_blank" rel="noreferrer">
+              <a className="mr-2 text-gray-700 dark:text-white hover:text-primarycolor dark:hover:text-primarycolor" href="https://www.linkedin.com/in/josh-unwin-a4735637/" target="_blank" rel="noreferrer">
                 <FaLinkedin className="text-2xl" />
               </a>
-              <a className="text-gray-700 dark:text-white hover:text-primarycolor" href="https://www.twitter.com/joshunwin/" target="_blank" rel="noreferrer">
+              <a className="text-gray-700 dark:text-white hover:text-primarycolor dark:hover:text-primarycolor" href="https://www.twitter.com/joshunwin/" target="_blank" rel="noreferrer">
                 <FaTwitter className="text-2xl" />
               </a>
             </div>

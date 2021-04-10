@@ -63,7 +63,7 @@ module.exports = {
           light: '#8cdeff',
           DEFAULT: '#70d6ff',
           dark: '#64c8f0',
-          darker: '#3fb6e6',
+          darker: '#3da9d4',
         },
       },
       fontFamily: {

@@ -53,13 +53,13 @@ export default function Container(props) {
           <ThemeButton theme={theme} setTheme={setTheme} mounted={mounted} />
           <div>
             <NextLink href="/about/#content">
-              <a className="p-1 sm:p-4 text-gray-900 dark:text-gray-100">About</a>
+              <a className="p-1 sm:p-4 text-gray-900 dark:text-gray-100 hover:text-primarycolor-dark dark:hover:text-primarycolor-dark">About</a>
             </NextLink>
             <NextLink href="/projects/#content">
-              <a className="p-1 sm:p-4 text-gray-900 dark:text-gray-100">Projects</a>
+              <a className="p-1 sm:p-4 text-gray-900 dark:text-gray-100 hover:text-primarycolor-dark dark:hover:text-primarycolor-dark">Projects</a>
             </NextLink>
             <NextLink href="/#content">
-              <a className="p-1 sm:p-4 text-gray-900 dark:text-gray-100">Blog</a>
+              <a className="p-1 sm:p-4 text-gray-900 dark:text-gray-100 hover:text-primarycolor-dark dark:hover:text-primarycolor-dark">Blog</a>
             </NextLink>
           </div>
         </nav>
