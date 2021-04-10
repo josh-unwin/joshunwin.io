@@ -6,7 +6,7 @@ import ThemeButton from '@/components/ThemeButton';
 
 const ProfileContainer = ({mounted, theme, setTheme}) => {
   return (
-    <div className="h-screen bg-gray-200 dark:bg-gray-950 flex items-center justify-center text-black dark:text-white">
+    <div className="h-screen bg-gray-100 dark:bg-gray-950 flex items-center justify-center text-black dark:text-white">
       <div className="absolute left-0 top-0">
         <ThemeButton mounted={mounted} theme={theme} setTheme={setTheme} />
       </div>
