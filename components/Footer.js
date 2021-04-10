@@ -1,19 +1,4 @@
-import Link from 'next/link';
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
-
-
-import NowPlaying from '@/components/NowPlaying';
-
-const ExternalLink = ({ href, children }) => (
-  <a
-    className="text-gray-500 hover:text-gray-600 transition"
-    target="_blank"
-    rel="noopener noreferrer"
-    href={href}
-  >
-    {children}
-  </a>
-);
 
 export default function Footer() {
   return (

@@ -1,8 +1,4 @@
-import Link from 'next/link';
 import { getAllFilesFrontMatterAndContent } from '@/lib/mdx';
-import hydrate from 'next-mdx-remote/hydrate';
-import MDXComponents from '@/components/MDXComponents';
-
 
 import Container from '@/components/Container';
 import ProjectCard from '@/components/ProjectCard';

@@ -1,8 +1,6 @@
-import Image from 'next/image';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
 
 export default function ProjectCard({ project }) {
-  console.log(project);
   return (
     <div className="flex flex-col md:flex-row w-full">
       <div>

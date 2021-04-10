@@ -3,7 +3,6 @@ import { parseISO, format } from 'date-fns';
 import { FaGithub } from 'react-icons/fa'
 
 import Container from '@/components/Container';
-import ViewCounter from '@/components/ViewCounter';
 
 const editUrl = (slug) =>
   `https://github.com/leerob/leerob.io/edit/main/data/blog/${slug}.mdx`;
