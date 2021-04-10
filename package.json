@@ -10,7 +10,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/leerob/leerob.io.git"
+    "url": "git+https://github.com/joshunwin/joshunwin-io.git"
   },
   "scripts": {
     "build": "next build",
