@@ -1,0 +1,46 @@
+---
+title: 'JAMstack and CAN Borneo'
+summary: 'My first solo web project after finishing a coding bootcamp & CAN Borneo'
+publishedAt: '2020-03-03'
+image: /static/images/blog/jamstack-canborneo/20190519_102904_0023.jpg
+categories:
+  - Environment
+  - Web Development
+---
+<Image
+  alt={`banner`}
+  src={`/static/images/jamstack-canborneo/canborneo-greenbkg-thin.jpg`}
+  width={1000}
+  height={240}
+/>
+
+One area of web development that has got me excited since completing the LeWagon Bootcamp is the JAMstack. A modern approach to building websites (see below for more). With that said, I'd like to share this little project I have been working on which has served as a learning piece and also an opportunity to help support a small grassroots NGO I was able to visit during my travels to Indonesia.
+
+> Check out the site so far: [canborneo.id](http://www.canborneo.id)
+
+## About CAN Borneo
+<Image
+  alt={`banner`}
+  src={`/static/images/jamstack-canborneo/20190519_102904_0023.jpg`}
+  width={1000}
+  height={563}
+/>
+CAN Borneo (Conservation Action Network Borneo) is a very small, grassroots NGO based in a remote village in East Kalimantan, Borneo. They work to try to protect the forest, wildlife and people in their local area from the ill effects of deforestation caused primarily by the palm oil industry and coal mining plantations as well as natural forest fires (increased due to climate change). Having a keen desire to support campaigns against climate change and environmental destruction, I learnt about CAN Borneo during my time in Bali as they went through fighting some of the worst forest fires in recent memory last September. Before my return to the UK, I decided to take the opportunity to visit them for a week, where they took me to see sites of deforestation, the nurseries they have built to grow seedlings and the plans they have in place for the future. It was a humbling and eye opening experience.
+
+> CAN Borneo work to protect the forest, wildlife and people in their local area from the ill effects of deforestation*
+
+## The project
+<Image
+  alt={`banner`}
+  src={`/static/images/jamstack-canborneo/canborneo-home.png`}
+  width={1000}
+  height={550}
+/>
+Built using Gatsby on Netlify, this little JAMstack project was made to replace CAN Borneo's previous Google Blogspot site. I used it as an opportunity to experiment with design by making something a little unconventional, based around a background of rotating blurred images and scrollable card components sitting on top.
+No alt text provided for this image
+As a very small non-profit organisation, implementing a donation feature was important for them as donations make up their only source of funds. Being Indonesia based, PayPal made the most sense for them so I added a simple PayPal button which ties in with the Google Sheets API to automatically log donations to a spreadsheet for them to keep track. Editing of site content and posting 'stories' (blogs) is made possible through Netlify CMS.
+In all, this solution allows Linus and his team at CAN Borneo to have a unique looking site without the cookie-cutter Wordpress feel where they can accept donations and add new content to share all while having no on-going running costs to worry about.
+
+## The JAMstack (this bit's for the nerds.. 🤓)
+
+Wondering what the heck the JAMstack is? Leveraging a number of separate advancements in web technology, the JAMstack model offers a solution for building front-end-orientated sites that are fast and lightweight, easy to maintain, cheap to run and secure while maintaining the power and flexibility of Javascript. It could loosely be described as the opposite to a monolithic site (anything from Rails to Django to Wordpress) - instead of everything living under one codebase running on a server, it is broken up into modular pieces and usually includes at minimum a static site generator, a front-end framework, a CDN and any data source you can imagine. It all revolves around continuous deployment from a Git repo, making a change to your app or content triggers a new build and deployment of your site. All the pages are generated during the build, so when a user visits the site, they are being served static pages which can be injected with dynamic content through the front-end framework and API's. This is what makes it both inherently secure and fast, there's no bloated server or database being called to generate pages on user's request, they're already made ready to serve up. This approach doesn't make sense for every website/web app out there, but I really think it makes for a far superior solution for the portion of the web still running Wordpress.
