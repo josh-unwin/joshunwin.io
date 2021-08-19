@@ -26,21 +26,20 @@ export default function Index({ posts, readingList }) {
             <NextLink href="/blog#content">See all...</NextLink>
           </span>
         </div>
-        {posts.map((post, index) => {
-          if (index < 3) {
-            return <BlogPost key={post.title} {...post} />;
-          }
-        })}
+        {posts.map((post) => (
+          <BlogPost key={post.title} {...post} />
+        ))}
 
         <h2 className="font-bold text-xl md:text-3xl tracking-tight mb-4 text-black dark:text-white">
           Currently Reading
         </h2>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 sm:gap-4">
           {readingList.frontMatter.Books.map((book) => (
             <BookCard
               title={book.title}
               description={book.description}
               href={book.href}
+              author={book.author}
             />
           ))}
         </div>
@@ -50,7 +49,7 @@ export default function Index({ posts, readingList }) {
 }
 
 export async function getStaticProps() {
-  const posts = await getFilesFrontMatter('blog');
+  const posts = await getFilesFrontMatter('blog', 2);
   const readingList = await getFileBySlug('extras', 'reading-list');
 
   return {
