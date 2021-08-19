@@ -69,7 +69,7 @@ module.exports = {
       fontFamily: {
         sans: ['Nunito', ...fontFamily.sans],
         code: ['Share Tech Mono', ...fontFamily.mono],
-        title: ['Roboto', ...fontFamily.sans]
+        title: ['TexGyreHeros', ...fontFamily.sans]
       },
       typography: (theme) => ({
         DEFAULT: {

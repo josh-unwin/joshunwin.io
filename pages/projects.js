@@ -1,4 +1,4 @@
-import { getAllFilesFrontMatterAndContent } from '@/lib/mdx';
+import { getFilesFrontMatterAndContent } from '@/lib/mdx';
 
 import Container from '@/components/Container';
 import ProjectCard from '@/components/ProjectCard';
@@ -6,7 +6,10 @@ import ProjectCard from '@/components/ProjectCard';
 export default function Projects({ projects }) {
   return (
     <Container title="Projects – Josh Unwin">
-      <div id="content" className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">
+      <div
+        id="content"
+        className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16"
+      >
         <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
           Projects
         </h1>
@@ -18,7 +21,9 @@ export default function Projects({ projects }) {
         {projects.map((project, index) => (
           <div className="flex items-center flex-col">
             <ProjectCard project={project} />
-            { index !== projects.length - 1 && <hr className="text-center my-10 w-7/12 border-1 border-gray-200 dark:border-gray-600" /> }
+            {index !== projects.length - 1 && (
+              <hr className="text-center my-10 w-7/12 border-1 border-gray-200 dark:border-gray-600" />
+            )}
           </div>
         ))}
       </div>
@@ -27,7 +32,7 @@ export default function Projects({ projects }) {
 }
 
 export async function getStaticProps() {
-  const projects = await getAllFilesFrontMatterAndContent('projects');
+  const projects = await getFilesFrontMatterAndContent('projects');
 
   return { props: { projects } };
 }

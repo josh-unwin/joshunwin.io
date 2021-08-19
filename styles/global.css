@@ -59,28 +59,53 @@
 }
 
 @font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 500;
-  font-display: optional;
-  src: url(/fonts/Roboto/roboto-v20-latin-500.woff2) format('woff2');
-}
-
-@font-face {
-  font-family: 'Roboto';
+  font-family: 'Lato';
   font-style: normal;
   font-weight: 700;
   font-display: optional;
-  src: url(/fonts/Roboto/roboto-v20-latin-700.woff2) format('woff2');
+  src: url(/fonts/Lato/lato-v17-latin-700.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 900;
+  font-display: optional;
+  src: url(/fonts/Lato/lato-v17-latin-900.woff2) format('woff2');
 }
 
 
 @font-face {
-  font-family: 'Roboto';
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 500;
+  font-display: optional;
+  src: url(/fonts/Lato/lato-v17-latin-regular.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'TexGyreHeros';
+  font-style: normal;
+  font-weight: 700;
+  font-display: optional;
+  src: url(/fonts/TexGyreHeros/texgyreheros-bold-webfont.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'TexGyreHeros';
   font-style: normal;
   font-weight: 900;
   font-display: optional;
-  src: url(/fonts/Roboto/roboto-v20-latin-900.woff2) format('woff2');
+  src: url(/fonts/TexGyreHeros/texgyreheros-bold-webfont.woff) format('woff');
+}
+
+
+@font-face {
+  font-family: 'TexGyreHeros';
+  font-style: normal;
+  font-weight: 500;
+  font-display: optional;
+  src: url(/fonts/TexGyreHeros/texgyreheros-regular-webfont.woff) format('woff');
 }
 
 @font-face {
@@ -140,6 +165,10 @@ h1, h2, h3, h4 {
 .prose img {
   /* Don't apply styles to next/image */
   @apply m-0;
+}
+
+.prose blockquote {
+  @apply -mt-4 font-thin;
 }
 
 .prose > :first-child {

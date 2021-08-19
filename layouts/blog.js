@@ -45,16 +45,6 @@ export default function BlogLayout({ children, frontMatter }) {
         </div>
         <div className="mt-8">
         </div>
-        <div className="text-sm text-gray-700 hover:text-gray-500 dark:text-gray-300">
-          <a
-            href={editUrl(frontMatter.slug)}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center"
-          >
-            <FaGithub className="mr-1" /> Edit on GitHub
-          </a>
-        </div>
       </article>
     </Container>
   );

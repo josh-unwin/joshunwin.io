@@ -16,8 +16,8 @@ const ProfileCard = () => {
         </div>
         <div className="flex ml-4 sm:ml-6 sm:items-center flex-grow">
           <div className="">
-            <h1 className="font-title tracking-widest text-2xl">joshua unwin</h1>
-            <h3 className="font-thin tracking-ultrawide mb-4">FRONT END DEVELOPER</h3>
+            <h1 className="font-sans tracking-widest text-2xl">joshua unwin</h1>
+            <h3 className="font-sans font-thin tracking-ultrawide mb-4">FRONT END DEVELOPER</h3>
             <ul className="text-gray-800 dark:text-white font-extralight">
               <li className="flex flex-row items-center">
                 <Image
@@ -28,7 +28,7 @@ const ProfileCard = () => {
                   className=""
                 />
                 <p className="ml-1 sm:text-left text-centered tracking-wide">
-                  Green revolution advocate
+                  Climate activist
                 </p>
               </li>
               <li className="flex flex-row items-center">
