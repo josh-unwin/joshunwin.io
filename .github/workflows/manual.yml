@@ -23,14 +23,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Get current date
-        id: date
-        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
-      - name: Create file  
-        uses: 1arp/create-a-file-action@0.2
+      - uses: 1arp/create-a-file-action@0.2
         with:
-          path: 'data/snippets/'
-          file: '${{ github.event.inputs.filename }}.mdx'
+          path: 'src'
+          file: 'foo.bar'
           content: |
             Hello
             World
