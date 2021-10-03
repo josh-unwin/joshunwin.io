@@ -30,7 +30,7 @@ jobs:
         uses: 1arp/create-a-file-action@0.2
         with:
           path: 'data/snippets/'
-          file: '${{ github.event.inputs.name }}.mdx'
+          file: '${{ github.event.inputs.filename }}.mdx'
           content: |
             Hello
             World
