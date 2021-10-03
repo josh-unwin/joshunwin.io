@@ -74,7 +74,6 @@
   src: url(/fonts/Lato/lato-v17-latin-900.woff2) format('woff2');
 }
 
-
 @font-face {
   font-family: 'Lato';
   font-style: normal;
@@ -98,7 +97,6 @@
   font-display: optional;
   src: url(/fonts/TexGyreHeros/texgyreheros-bold-webfont.woff) format('woff');
 }
-
 
 @font-face {
   font-family: 'TexGyreHeros';
@@ -150,12 +148,15 @@ html {
   }
 }
 
-h1, h2, h3, h4 {
-  @apply font-title
+h1,
+h2,
+h3,
+h4 {
+  @apply font-title;
 }
 
 .prose pre {
-  @apply bg-gray-50 border border-gray-200 dark:border-gray-700 dark:bg-gray-900;
+  @apply bg-gray-50 border border-gray-200 dark:border-gray-700 dark:bg-gray-900 w-full;
 }
 
 .prose code {
@@ -169,12 +170,6 @@ h1, h2, h3, h4 {
 
 .prose blockquote {
   @apply -mt-4 font-thin;
-}
-
-.prose > :first-child {
-  /* Override removing top margin, causing layout shift */
-  margin-top: 1.25em !important;
-  margin-bottom: 1.25em !important;
 }
 
 .token.comment,
@@ -247,7 +242,7 @@ pre {
 }
 
 .remark-code-title {
-  @apply text-gray-800 dark:text-gray-200 px-5 py-3 border border-b-0 border-gray-200 dark:border-gray-700 rounded-t bg-gray-200 dark:bg-gray-800 text-sm font-mono font-bold;
+  @apply text-gray-800 dark:text-gray-200 px-5 py-3 border border-b-0 border-gray-200 dark:border-gray-700 rounded-t bg-gray-100 dark:bg-gray-800 text-sm font-mono font-bold;
 }
 
 .remark-code-title + pre {

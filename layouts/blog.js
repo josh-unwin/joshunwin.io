@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { parseISO, format } from 'date-fns';
-import { FaGithub } from 'react-icons/fa'
+import { FaGithub } from 'react-icons/fa';
 
 import Container from '@/components/Container';
 
@@ -20,7 +20,7 @@ export default function BlogLayout({ children, frontMatter }) {
         <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
           {frontMatter.title}
         </h1>
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center w-full mt-2">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center w-full mt-2 mb-8">
           <div className="flex items-center">
             <Image
               alt="Josh Unwin"
@@ -43,8 +43,7 @@ export default function BlogLayout({ children, frontMatter }) {
         <div className="prose dark:prose-dark max-w-none w-full">
           {children}
         </div>
-        <div className="mt-8">
-        </div>
+        <div className="mt-8"></div>
       </article>
     </Container>
   );
