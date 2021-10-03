@@ -17,16 +17,16 @@ on:
         # Input has to be provided for the workflow to run
         required: true
 
+
 jobs:
   createFile:
     name: Create A File
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: 1arp/create-a-file-action@0.2
-        with:
-          path: 'src'
-          file: 'foo.bar'
-          content: |
-            Hello
-            World
+      - name: Get current date
+        id: date
+        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+      - uses: "finnp/create-file-action@master"
+        env:
+          FILE_NAME: '${{ github.event.inputs.filename }}.mdx'
+          FILE_DATA: "file content"
