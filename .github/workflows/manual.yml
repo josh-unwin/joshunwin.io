@@ -2,29 +2,35 @@
 
 name: Manual workflow
 
+
 # Controls when the action will run. Workflow runs when manually triggered using the UI
 # or API.
 on:
   workflow_dispatch:
     # Inputs the workflow accepts.
     inputs:
-      name:
+      filename:
         # Friendly description to be shown in the UI instead of 'name'
-        description: 'Person to greet'
+        description: 'Snippet Name'
         # Default value if no value is explicitly provided
-        default: 'World'
+        default: 'my-snippet'
         # Input has to be provided for the workflow to run
         required: true
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "greet"
-  greet:
-    # The type of runner that the job will run on
+  createFile:
+    name: Create A File
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Runs a single command using the runners shell
-    - name: Send greeting
-      run: echo "Hello ${{ github.event.inputs.name }}"
+      - uses: actions/checkout@v2
+      - name: Get current date
+        id: date
+        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+      - name: Create file  
+        uses: 1arp/create-a-file-action@0.2
+        with:
+          path: 'data/snippets/'
+          file: '${{ github.event.inputs.name }}.mdx'
+          content: |
+            Hello
+            World
