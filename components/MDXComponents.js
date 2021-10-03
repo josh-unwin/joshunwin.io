@@ -34,7 +34,7 @@ const CopyToClipboard = (props) => {
   return (
     <button
       onClick={onClick}
-      className={`mt-2 mr-4 text-gray-500 float-right font-bold ${
+      className={`text-sm mt-2 mr-4 text-gray-500 float-right font-bold ${
         copied ? 'text-green-500' : ''
       }`}
     >

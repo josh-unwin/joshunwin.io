@@ -172,6 +172,12 @@ h4 {
   @apply -mt-4 font-thin;
 }
 
+.prose > :first-child {
+  /* Override removing top margin, causing layout shift */
+  /* margin-top: 1.25em !important;
+  margin-bottom: 1.25em !important; */
+}
+
 .token.comment,
 .token.prolog,
 .token.doctype,
@@ -229,7 +235,7 @@ h4 {
 
 code[class*='language-'],
 pre[class*='language-'] {
-  @apply text-gray-800 dark:text-gray-50;
+  @apply text-gray-800 dark:text-gray-50 w-full;
 }
 
 pre::-webkit-scrollbar {
@@ -242,7 +248,7 @@ pre {
 }
 
 .remark-code-title {
-  @apply text-gray-800 dark:text-gray-200 px-5 py-3 border border-b-0 border-gray-200 dark:border-gray-700 rounded-t bg-gray-100 dark:bg-gray-800 text-sm font-mono font-bold;
+  @apply w-full text-gray-800 dark:text-gray-200 px-5 py-2 border border-b-0 border-gray-200 dark:border-gray-700 rounded-t bg-gray-100 dark:bg-gray-800 text-sm font-mono font-bold;
 }
 
 .remark-code-title + pre {

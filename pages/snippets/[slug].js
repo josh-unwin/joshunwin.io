@@ -1,7 +1,7 @@
 import hydrate from 'next-mdx-remote/hydrate';
 
 import { getFiles, getFileBySlug } from '@/lib/mdx';
-import BlogLayout from '@/layouts/blog';
+import SnippetLayout from '@/layouts/snippet';
 import MDXComponents from '@/components/MDXComponents';
 
 export default function Snippet({ mdxSource, frontMatter }) {
@@ -9,7 +9,7 @@ export default function Snippet({ mdxSource, frontMatter }) {
     components: MDXComponents
   });
 
-  return <BlogLayout frontMatter={frontMatter}>{content}</BlogLayout>;
+  return <SnippetLayout frontMatter={frontMatter}>{content}</SnippetLayout>;
 }
 
 export async function getStaticPaths() {
