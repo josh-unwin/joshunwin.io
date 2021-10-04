@@ -6,36 +6,19 @@ import { getFiles, getFileBySlug, getFilesFrontMatter } from '@/lib/mdx';
 import SnippetLayout from '@/layouts/snippetLayout';
 import MDXComponents from '@/components/MDXComponents';
 import Snippet from '@/components/Snippet';
-import SnippetLi from '@/components/SnippetLi';
+import SnippetList from '@/components/SnippetList';
 
 export default function SnippetPage({ allSnippets, snippet }) {
-  const [searchValue, setSearchValue] = useState('');
-  const filteredSnippets = allSnippets
-    .sort(
-      (a, b) =>
-        Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt))
-    )
-    .filter((frontMatter) =>
-      frontMatter.title.toLowerCase().includes(searchValue.toLowerCase())
-    );
-
   const content = hydrate(snippet.mdxSource, {
     components: MDXComponents
   });
 
   return (
     <SnippetLayout frontMatter={snippet.frontMatter}>
-      <div className="w-1/3 text-black">
-        {!filteredSnippets.length && (
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
-            No posts found.
-          </p>
-        )}
-        {filteredSnippets.map((frontMatter) => (
-          <SnippetLi key={frontMatter.title} {...frontMatter} />
-        ))}
+      <div className="hidden lg:block md:pr-10 w-1/4 text-black">
+        <SnippetList allSnippets={allSnippets} />
       </div>
-      <div className="w-2/3">
+      <div className="md:ml-20 md:max-w-4xl w-full">
         <Snippet frontMatter={snippet.frontMatter} content={content} />
       </div>
     </SnippetLayout>
