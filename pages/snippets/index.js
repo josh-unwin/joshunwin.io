@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import Container from '@/components/Container';
-import Snippet from '@/components/SnippetLi';
+import SnippetLi from '@/components/SnippetLi';
 import { getFilesFrontMatter } from '@/lib/mdx';
 
 export default function Snippets({ snippets }) {
@@ -24,9 +24,18 @@ export default function Snippets({ snippets }) {
         <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
           Code Snippets
         </h1>
-        <p className="text-gray-600 dark:text-gray-400 mb-4">
-          {`My little place to write on the internet.`}
-        </p>
+        <div className="w-full flex justify-between text-gray-600 dark:text-gray-400 mb-4">
+          <p className="">
+            {`A place to save little snippets of code, for safe keeping :)`}
+          </p>
+          <a
+            href="https://github.com/josh-unwin/joshunwin.io/new/master/data/snippets"
+            target="_blank"
+            className="hover:text-primarycolor"
+          >
+            <strong>+</strong> add new
+          </a>
+        </div>
         <div className="relative w-full mb-4">
           <input
             aria-label="Search snippets"
@@ -56,7 +65,7 @@ export default function Snippets({ snippets }) {
           </p>
         )}
         {filteredSnippets.map((frontMatter) => (
-          <Snippet key={frontMatter.title} {...frontMatter} />
+          <SnippetLi key={frontMatter.title} {...frontMatter} />
         ))}
       </div>
     </Container>

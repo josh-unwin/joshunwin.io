@@ -21,7 +21,16 @@ const SnippetList = ({ allSnippets }) => {
 
   return (
     <div>
-      <h3 className="font-bold text-xl mb-5">Snippets</h3>
+      <div className="flex justify-between items-end">
+        <h3 className="font-bold text-xl pb-1">Snippets</h3>
+        <a
+          href="https://github.com/josh-unwin/joshunwin.io/new/master/data/snippets"
+          target="_blank"
+          className="hover:text-primarycolor"
+        >
+          <strong>+</strong> add new
+        </a>
+      </div>
       <div className="relative w-full mb-4">
         <input
           aria-label="Search snippets"
