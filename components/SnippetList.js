@@ -58,9 +58,8 @@ const SnippetList = ({ allSnippets }) => {
         <p className="text-gray-600 dark:text-gray-400 mb-4">No posts found.</p>
       )}
       {Object.entries(filteredSnippets).map(([category, snippets]) => {
-        console.log(snippets);
         return (
-          <div className="mb-6">
+          <div key={category} className="mb-6">
             <h4 className="font-bold">{category}</h4>
             {snippets.map((frontMatter) => (
               <SnippetLi key={frontMatter.title} {...frontMatter} />

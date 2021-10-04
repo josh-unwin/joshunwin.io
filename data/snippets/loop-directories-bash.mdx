@@ -1,0 +1,22 @@
+---
+title: Iterate over directory contents
+publishedAt: '2019-02-08'
+category: Bash
+---
+
+<br />
+
+<CopyToClipboard />
+
+#### loop.sh /path/to/directory
+
+```bash
+#!/bin/sh
+
+# Loop over items in directory, selecting certain file types
+for i in "$1"/*.mov; do
+  name=`echo "$i" | cut -d'.' -f1` #
+  echo "$name"
+  basename $1
+done
+```

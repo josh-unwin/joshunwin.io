@@ -38,6 +38,7 @@ export default function Index({ posts, readingList }) {
         <div className="grid grid-cols-1 sm:grid-cols-2 sm:gap-4">
           {readingList.frontMatter.Books.map((book) => (
             <BookCard
+              key={book.title}
               title={book.title}
               description={book.description}
               href={book.href}

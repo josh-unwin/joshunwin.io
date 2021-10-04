@@ -31,7 +31,9 @@ const Snippet = ({ frontMatter, content }) => {
       <p className="text-gray-700 dark:text-gray-300">
         {frontMatter.description}
       </p>
-      <div className="prose dark:prose-dark w-full -mt-6">{content}</div>
+      <div id="snippet" className="prose dark:prose-dark w-full -mt-6">
+        {content}
+      </div>
     </div>
   );
 };

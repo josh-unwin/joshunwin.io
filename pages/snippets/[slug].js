@@ -9,9 +9,13 @@ import Snippet from '@/components/Snippet';
 import SnippetList from '@/components/SnippetList';
 
 export default function SnippetPage({ allSnippets, snippet }) {
-  const content = hydrate(snippet.mdxSource, {
+  let content = hydrate(snippet.mdxSource, {
     components: MDXComponents
   });
+
+  console.log(content);
+
+  // content = content.replaceAll('__', ' ');
 
   return (
     <SnippetLayout frontMatter={snippet.frontMatter}>
