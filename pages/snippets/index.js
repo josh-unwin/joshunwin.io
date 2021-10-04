@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import Container from '@/components/Container';
-import Snippet from '@/components/Snippet';
+import Snippet from '@/components/SnippetLi';
 import { getFilesFrontMatter } from '@/lib/mdx';
 
 export default function Snippets({ snippets }) {

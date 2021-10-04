@@ -1,20 +1,39 @@
-import Link from 'next/link';
+import Image from 'next/image';
 
-const BlogPost = ({ title, summary, slug }) => {
+const Snippet = ({ frontMatter, content }) => {
   return (
-    <Link href={`/snippets/${slug}/#content`}>
-      <a className="w-full">
-        <div className="mb-8 w-full">
-          <div className="flex flex-col md:flex-row justify-between group">
-            <h4 className="text-lg md:text-xl font-medium mb-2 w-full text-gray-900 dark:text-gray-100 group-hover:text-primarycolor-dark group-hover:dark:text-primarycolor-darker">
-              {title}
-            </h4>
-          </div>
-          <p className="text-gray-600 dark:text-gray-400">{summary}</p>
+    <div>
+      <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
+        {frontMatter.title}
+      </h1>
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center w-full mt-2 mb-8">
+        <div className="flex items-center">
+          <Image
+            alt="Josh Unwin"
+            height={24}
+            width={24}
+            src="/profile.jpg"
+            className="rounded-full"
+          />
+          <p className="text-sm text-gray-500 dark:text-gray-300 ml-2">
+            {frontMatter.by}
+            {'Joshua Unwin'}
+          </p>
         </div>
-      </a>
-    </Link>
+        <a
+          className="text-right text-sm text-gray-500 min-w-32 mt-2 md:mt-0"
+          href={`https://github.com/josh-unwin/joshunwin.io/edit/master/data/snippets/${frontMatter.slug}.mdx`}
+        >
+          Edit
+        </a>
+      </div>
+
+      <p className="text-gray-700 dark:text-gray-300">
+        {frontMatter.description}
+      </p>
+      <div className="prose dark:prose-dark w-full -mt-6">{content}</div>
+    </div>
   );
 };
 
-export default BlogPost;
+export default Snippet;
