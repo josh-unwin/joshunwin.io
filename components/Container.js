@@ -23,7 +23,7 @@ export default function Container(props) {
       console.log('adding content to path');
       router.replace(router.asPath + '#content');
     }
-  });
+  }, []);
 
   const { children, ...customMeta } = props;
   const meta = {
