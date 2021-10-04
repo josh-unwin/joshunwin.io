@@ -18,12 +18,12 @@ export default function Container(props) {
   const router = useRouter();
 
   // If url is not the root, apply #content to url if not already there.
-  useEffect(() => {
-    if (router.pathname !== '/' && !router.asPath.includes('#content')) {
-      console.log('adding content to path');
-      router.replace(router.asPath + '#content');
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (router.pathname !== '/' && !router.asPath.includes('#content')) {
+  //     console.log('adding content to path');
+  //     router.replace(router.asPath + '#content');
+  //   }
+  // }, []);
 
   const { children, ...customMeta } = props;
   const meta = {
