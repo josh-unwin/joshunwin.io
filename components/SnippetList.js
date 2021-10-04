@@ -22,11 +22,13 @@ const SnippetList = ({ allSnippets }) => {
   return (
     <div>
       <div className="flex justify-between items-end">
-        <h3 className="font-bold text-xl pb-1">Snippets</h3>
+        <h3 className="font-bold text-xl pb-1 text-black dark:text-white">
+          Snippets
+        </h3>
         <a
           href="https://github.com/josh-unwin/joshunwin.io/new/master/data/snippets"
           target="_blank"
-          className="hover:text-primarycolor"
+          className="hover:text-primarycolor text-black dark:text-white"
         >
           <strong>+</strong> add new
         </a>

@@ -13,10 +13,6 @@ export default function SnippetPage({ allSnippets, snippet }) {
     components: MDXComponents
   });
 
-  console.log(content);
-
-  // content = content.replaceAll('__', ' ');
-
   return (
     <SnippetLayout frontMatter={snippet.frontMatter}>
       <div className="hidden lg:block md:pr-10 w-1/4 text-black">

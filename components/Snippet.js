@@ -1,8 +1,12 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Snippet = ({ frontMatter, content }) => {
   return (
     <div className="max-w-2xl">
+      <Link href="/snippets#content">
+        <a className="text-black dark:text-white md:hidden float-right">Back</a>
+      </Link>
       <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
         {frontMatter.title}
       </h1>
@@ -20,7 +24,7 @@ const Snippet = ({ frontMatter, content }) => {
             {'Joshua Unwin •'}
           </p>
           <a
-            className="text-right text-sm text-gray-500 min-w-32 mt-2 ml-1 md:mt-0"
+            className="text-right text-sm text-gray-500 dark:text-gray-300 ml-1"
             href={`https://github.com/josh-unwin/joshunwin.io/edit/master/data/snippets/${frontMatter.slug}.mdx`}
           >
             Edit
