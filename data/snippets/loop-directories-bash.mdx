@@ -15,8 +15,9 @@ category: Bash
 
 # Loop over items in directory, selecting certain file types
 for i in "$1"/*.mov; do
-  name=`echo "$i" | cut -d'.' -f1` #
+  name=`echo "$i" | cut -d'.' -f1`
   echo "$name"
-  basename $1
+  basename $name
+  basename $name .mov
 done
 ```
