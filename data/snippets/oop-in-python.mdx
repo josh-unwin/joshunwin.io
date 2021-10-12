@@ -1,0 +1,98 @@
+---
+title: OOP in Python
+publishedAt: '2019-02-08'
+category: Python
+---
+
+<br />
+
+<CopyToClipboard />
+
+#### file.py - with comments
+
+```python
+class File():
+  *** A file on your computer *** # This is a docstring - used to describe the class.
+
+  file_count = 0 # This is a class attribute, it is applied to the class, not an instance.
+
+  # Constructor. Runs on initialisation. Default values included.
+  def __init__(self, filename = 'no_name', size = 0):
+    self.filename = filename # Sets it's own instance filename value to the one passed to it.
+    self.size = size
+    self.create_time
+    self.__access_key # Two _'s defines it as a private attribute which can only be accessed externally through syntax: myFile._File__access_key
+
+  # Sets a custom return string when an instance itself is printed, ie: print(myFile)
+  def __str__(self):
+    return f'File: {self.filename} - Size: {self.size}'
+
+  # A instance method - it must use 'self' as the first parameter.
+  def summarise(self):
+    return f'This file has the name: {self.filename} and is {self.size}. It was created at {self.create_time}'
+
+  # two __'s in method name makes it private, for use by other methods in the class only.
+  def __private_method(self):
+    print("I'm doing something private!")
+
+  # Properties can be used to return read-only versions of a private attribute (ie, a getter)
+  @property
+  def access_key(self):
+    return self.__access.key
+
+  # A setter method is used to allow updating a private attribute, extra protection logic can be added
+  @access_key.setter
+  def access_key(self, new_access_key):
+    if new_access_key == "":
+      print("Access key can't be blank")
+    else:
+      self.__access_key = new_access_key
+      print("Access key updated!")
+
+  # A static method is one that is applied to the class itself, not instances. It's called like File.count() and can't use self.
+  @staticmethod
+  def count():
+    return f'There are {file_count} many files on the system.'
+```
+
+<CopyToClipboard />
+
+#### file.py - clean
+
+```python
+class File():
+  *** A file on your computer ***
+
+  file_count = 0
+
+  def __init__(self, filename = 'no_name', size = 0):
+    self.filename = filename
+    self.size = size
+    self.create_time
+    self.__access_key
+
+  def __str__(self):
+    return f'File: {self.filename} - Size: {self.size}'
+
+  def summarise(self):
+    return f'This file has the name: {self.filename} and is {self.size}. It was created at {self.create_time}'
+
+  def __private_method(self):
+    print("I'm doing something private!")
+
+  @property
+  def access_key(self):
+    return self.__access.key
+
+  @access_key.setter
+  def access_key(self, new_access_key):
+    if new_access_key == "":
+      print("Access key can't be blank")
+    else:
+      self.__access_key = new_access_key
+      print("Access key updated!")
+
+  @staticmethod
+  def count():
+    return f'There are {file_count} many files on the system.'
+```
