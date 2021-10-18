@@ -13,3 +13,14 @@ category: Bash
 ```bash
 find /path/to/source -iname "*.jpg" -not -name ".*" -exec cp -nv {} /path/to/destination \;
 ```
+
+<CopyToClipboard />
+
+#### Duplicate all directories of the same name
+
+This looks for all directories named ORIGINAL, then clones them into the same directory they
+exist in, naming the copy RENAME.
+
+```bash
+find $1 -type d -name ORIGINAL -exec bash -c 'cp -av $1 $(dirname $1)/RENAME' _ {} \;
+```
