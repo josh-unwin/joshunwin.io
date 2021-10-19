@@ -155,6 +155,34 @@ h4 {
   @apply font-title;
 }
 
+.snippet {
+  @apply text-black;
+}
+
+.snippet-dark {
+  @apply text-white;
+}
+
+.snippet div,
+p,
+h1,
+h2,
+h3 {
+  @apply mx-5;
+}
+
+.snippet code {
+  @apply text-gray-800 dark:text-gray-200 px-1 border border-gray-100 dark:border-gray-800 rounded-md bg-gray-50 dark:bg-gray-900;
+}
+
+.snippet pre {
+  @apply text-sm bg-gray-50 border border-gray-100 py-2 px-4 mb-3 dark:border-gray-700 dark:bg-gray-900 w-full;
+}
+
+.snippet pre code {
+  @apply border-none bg-none;
+}
+
 .prose pre {
   @apply bg-gray-50 border border-gray-200 dark:border-gray-700 dark:bg-gray-900 w-full;
 }

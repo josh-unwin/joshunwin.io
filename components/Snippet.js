@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const Snippet = ({ frontMatter, content }) => {
   return (
-    <div className="max-w-2xl">
+    <div className="">
       <Link href="/snippets#content">
         <a className="text-black dark:text-white md:hidden float-right">Back</a>
       </Link>
@@ -35,7 +35,7 @@ const Snippet = ({ frontMatter, content }) => {
       <p className="text-gray-700 dark:text-gray-300">
         {frontMatter.description}
       </p>
-      <div id="snippet" className="prose dark:prose-dark w-full -mt-6">
+      <div id="snippet" className="snippet dark:snippet-dark w-full -mt-6">
         {content}
       </div>
     </div>
