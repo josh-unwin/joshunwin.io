@@ -27,3 +27,12 @@ find $1 -type d -name ORIGINAL -exec bash -c 'cp -av $1 $(dirname $1)/RENAME' _ 
 
 This looks for all directories named ORIGINAL, then clones them into the same directory they
 exist in, naming the copy RENAME.
+
+
+#### Copy all DOCUMENTATION folders to new location using SHOOTDAY folder name
+
+```bash
+find SOURCE_DIR -type d -iname '*DOCUMENTATION*' -exec bash -c 'SD=$(echo $1 | grep -Eoi "\d\w*_SHOOTDAY_\w*\d"); cp -R $1 DESTINATION/$SD' _ {} \;```
+```
+
+This looks for all directories with DOCUMENTATION in the name, tries to extract the shootday name from the path and then clones to a specified destination, using the shootday as the name.
