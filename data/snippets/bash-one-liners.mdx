@@ -40,3 +40,12 @@ find SOURCE_DIR -type d -iname '*DOCUMENTATION*' -exec bash -c 'SD=$(echo $1 | g
 ```
 
 This looks for all directories with DOCUMENTATION in the name, tries to extract the shootday name from the path and then clones to a specified destination, using the shootday as the name.
+
+
+#### Stop, remove and recreate a docker postgres image
+
+```bash
+docker ps -a | awk '$2 == "postgres" { print $1 }' | xargs docker stop | xargs docker rm && make docker-build-local
+```
+
+Grabs the container_id for a docker postgres container, stops it, removes it, and then runs the make command to rebuild.
