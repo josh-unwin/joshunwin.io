@@ -1,0 +1,82 @@
+---
+title: Find and copy MXFs from EDL
+publishedAt: '2022-07-20'
+category: Bash
+---
+
+<br />
+This script extracts clip names from an edl and tries to find them in a provided directory, it copies found files to a provided output.
+<br />
+
+<CopyToClipboard />
+
+#### loop.sh
+
+```bash
+#!/bin/bash
+
+# Written by Josh Unwin
+
+programname=$0
+edl_path=$1
+src_directory_path=$2
+output_directory_path=$3
+
+function usage {
+    echo ""
+    echo "Extracts clip names from an edl, searches for mxf transcodes of each in the provided directory and copies them to the provided output directory."
+    echo ""
+    echo "usage: $programname edl_path src_directory_path output_directory_path"
+    echo ""
+    echo "  edl_path                The EDL you wish to use."
+    echo "  src_directory_path      A path to the root of your project to search for transcode mxfs"
+    echo "  output_directory_path   Where you wish to copy the transcodes mxfs to"
+    echo ""
+}
+
+function die {
+    printf "Script failed: %s\n\n" "$1"
+    exit 1
+}
+
+if [[ -z $edl_path ]]; then
+    usage
+    die "Missing parameter 1: edl_path"
+elif [[ -z $src_directory_path ]]; then
+    usage
+    die "Missing parameter 2: src_directory_path"
+elif [[ -z $output_directory_path ]]; then
+    usage
+    die "Missing parameter 3: output_directory_path"
+elif [ ! -d $src_directory_path ]; then
+  usage
+  die "source directory $src_directory_path does not exist"
+elif [ ! -d $output_directory_path ]; then
+  usage
+  die "output directory $output_directory_path does not exist"
+fi
+
+
+# Parse the EDL file line by line
+while read -r line
+do
+  # Extract the clip name
+  if echo "$line" | grep -E '^[0-9]{3}' >/dev/null # if first 3 chars are digits, assume its a clip entry line, otherwise ignore
+  then
+    clip_name=$(echo $line | cut -d' ' -f2)
+    clips+=("$clip_name")
+  fi
+done < $1
+
+for clip in "${clips[@]}"
+do
+  path=$(find $2 -ipath '*TRANSCODES*' -iname "$clip.mxf")
+  if [ -z "${path}" ]
+  then
+    echo "Could not find $clip"
+  else
+    cp -nv "$path" "$3"
+  fi
+done
+
+```
